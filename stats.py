@@ -8,3 +8,14 @@ def char_count_in_book(book):
     for char in lower:
         char_dict[char] = char_dict.get(char, 0) + 1
     return char_dict
+
+def sort_on(items):
+    return items[1]
+
+def sort_char_counts(char_dict):
+    items = list(char_dict.items())
+    items.sort(reverse=True, key=sort_on)
+    sorted_list = []
+    for key, value in items:
+        sorted_list.append({"char": key, "num": value})
+    return sorted_list
